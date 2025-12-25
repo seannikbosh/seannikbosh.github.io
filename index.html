@@ -1,47 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Nikbosh | Executive IT, Data & Security Leader</title>
+    <meta name="description" content="Sean Nikbosh - Executive Leader in IT Strategy, Cybersecurity, Data Science, and Digital Transformation.">
+     
+    <!-- Fonts: Inter for a clean, modern, professional tech look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sean Nikbosh - Information Technology, Data Governance, Cybersecurity, Compliance">
-<title>Sean Nikbosh</title>
-<style>
-    body {
-        font-family: 'Times New Roman', Times, serif;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        text-align: center;
-        line-height: 1.6;
-    }
-    .name {
-        font-size: 32px;
-        margin-bottom: 40px;
-        font-weight: normal;
-    }
-    .expertise {
-        margin-bottom: 15px;
-        font-size: 18px;
-    }
-    .connect-button {
-        display: inline-block;
-        margin-top: 40px;
-        padding: 10px 40px;
-        border: 1px solid #0077b5;
-        color: #0077b5;
-        text-decoration: none;
-        font-size: 18px;
-    }
-    .connect-button:hover {
-        background-color: #f8f8f8;
-    }
+    <style>
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --bg-color: #0a0f16;       /* Deep, almost black blue */
+            --card-bg: #111827;        /* Slightly lighter for cards */
+            --text-primary: #f3f4f6;   /* Off-white for main text */
+            --text-secondary: #9ca3af;/* Muted grey for descriptions */
+            --accent-color: #0ea5e9;   /* Electric Blue / Cyan */
+            --accent-hover: #38bdf8;
+            --border-color: #1f2937;
+            --font-main: 'Inter', sans-serif;
+            --spacing-section: 5rem;
+        }
 
-</style>
+        /* --- SMOOTH SCROLLING --- */
+        html {
+            scroll-behavior: smooth;
+        }
 
-<div class="expertise">Information Technology</div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<div class="expertise">Data Governance</div>
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-<div class="expertise">Cybersecurity</div>
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
 
-<div class="expertise">Compliance</div>
+        ul {
+            list-style: none;
+        }
 
-<a href="https://www.linkedin.com/in/seannikbosh/" class="connect-button">https://www.linkedin.com/in/seannikbosh/</a>
+        /* --- Layout Utility --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: var(--spacing-section) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-text {
+            color: var(--accent-color);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-secondary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 15, 22, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: inline-block;
+            flex-shrink: 0; /* This prevents the logo from shrinking and pushing items down */
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none; /* Removes the underline */
+            cursor: pointer;
+        }
+
+        /* Optional: Keeps the color consistent when you hover over it */
+        a.logo:hover {
+            color: var(--text-primary);
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- Executive Summary --- */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media(min-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .summary-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        /* --- Feats of Strength (Accomplishments) --- */
+        .feats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feat-item {
+            background: linear-gradient(145deg, var(--card-bg), #161f2e);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .feat-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .feat-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feat-title {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Competency Matrix --- */
+        .matrix-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-between;
+        }
+
+        .matrix-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .matrix-col h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--accent-hover);
+            padding: 0.4rem 0.8rem;
+            margin: 0 0.5rem 0.5rem 0;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* --- News Section Redesign --- */
+        .news-intro {
+            margin-bottom: 2rem;
+        }
+
+        /* Part 1: Static Links */
+        .static-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .static-link-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .static-link-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .source-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .static-link-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .static-link-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-hover);
+            margin-top: auto;
+        }
+
+        /* Part 2: Dynamic Feeds */
+        .dynamic-feeds-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-feed {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 400px; /* Fixed height for scroll area */
+        }
+
+        .news-header {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-header h3 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981; /* Green dot */
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .news-content {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        /* Custom Scrollbar */
+        .news-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .news-content::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        .news-content::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        /* --- REDUCED SPACING FIX --- */
+        .news-item {
+            margin-bottom: 0.75rem; /* Reduced from 1.5rem */
+            padding-bottom: 0.75rem; /* Reduced from 1.5rem */
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-item a {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem; /* Reduced title/meta gap slightly */
+            line-height: 1.4;
+        }
+
+        .news-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .news-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* --- Continuous Learning --- */
+        .learning-card {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(14, 165, 233, 0.1) 0%, rgba(10, 15, 22, 0) 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .learning-status {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-hover);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 1rem;
+            white-space: nowrap;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- Responsive Tweaks (Mobile Nav Fix) --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            
+            /* Allow header to grow */
+            header { 
+                height: auto; 
+                padding-bottom: 1rem; 
+            }
+
+            /* Stack navigation vertically */
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            /* Make the logo centered and add margin */
+            .logo { 
+                margin-bottom: 0.5rem; 
+            }
+
+            /* Show links and stack them vertically */
+            .nav-links { 
+                display: flex; /* Changed from 'none' to 'flex' */
+                flex-direction: column; 
+                width: 100%;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            /* Adjust hero padding to account for taller header */
+            .hero { 
+                padding-top: 240px; /* Increased to clear the stacked nav */
+                text-align: center; 
+            }
+            .hero-content { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- This href="#" will now scroll to top smoothly -->
+                <a href="#" class="logo">SEAN NIKBOSH</a>
+                
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#feats">Impact</a>
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">CONSULTING & Executive Leadership</span>
+                    <h1>Architecting Digital Transformation, Securing the Enterprise, & Unlocking Data Value.</h1>
+                    <p style="font-size: 1.2rem; max-width: 600px;">
+                        20+ years driving operational efficiency, innovation, and competitive advantage for Fortune 500 global enterprises.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <a href="https://www.linkedin.com/in/seannikbosh/" target="_blank" class="btn">Connect on LinkedIn</a>
+                        <!-- <a href="#expertise" class="btn btn-outline" style="margin-left: 1rem;">View Expertise</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Executive Summary -->
+        <section id="about">
+            <div class="container">
+                <h2>Executive Profile</h2>
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Strategic Alignment</h3>
+                        <p>
+                            Expert in leading enterprise-wide technology initiatives, managing multi-million dollar IT budgets, and partnering with C-suite and board leadership to deliver desired outcomes.
+                        </p>
+                        <p>
+                            I align IT, Applications, Data, and Security strategies with business objectives to drive growth and ensure resilience in complex, global operations.
+                        </p>
+                    </div>
+                    <div class="summary-card">
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Leadership Philosophy</h3>
+                        <p>
+                            An approachable leader skilled in attracting, developing, and motivating high-performing global teams.
+                        </p>
+                        <p>
+                            My focus is on fostering a security-conscious corporate culture while rapidly scaling modern infrastructure to meet the demands of the market.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feats -->
+        <section id="feats">
+            <div class="container">
+                <h2>Key Accomplishments</h2>
+                <div class="feats-grid">
+                    <div class="feat-item">
+                        <span class="feat-icon">🚀</span>
+                        <div class="feat-title">Enterprise ERP & Digital Transformation</div>
+                        <p>Planned and deployed complex Oracle EBS and SAP S/4HANA transformations. Managed cloud migrations ensuring secure transfer of proprietary data while maintaining global business continuity.</p>
+                    </div>
+                    <div class="feat-item">
+                        <span class="feat-icon">📊</span>
+                        <div class="feat-title">Big Data & Real Estate Intelligence</div>
+                        <p>Designed and executed massive database and ETL initiatives to store data for all US residential and commercial real estate. Built foundational data architecture enabling high-volume analytics.</p>
+                    </div>
+                    <div class="feat-item">
+                        <span class="feat-icon">🤖</span>
+                        <div class="feat-title">Data Science & Applied AI</div>
+                        <p>Led data science initiatives utilizing predictive analytics and AI-driven inventory management. Implemented automated alerts and real-time dashboards optimizing lifecycle management.</p>
+                    </div>
+                    <div class="feat-item">
+                        <span class="feat-icon">🛡️</span>
+                        <div class="feat-title">Cybersecurity & Modernization</div>
+                        <p>Directed comprehensive cybersecurity programs and risk mitigation frameworks. Modernized legacy systems to modern stacks and migrated client-server data centers to AWS Cloud.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competency Matrix -->
+        <section id="expertise">
+            <div class="container">
+                <h2>Strategic Competencies</h2>
+                <div class="matrix-container">
+                    <div class="matrix-col">
+                        <h3>Strategy & Transformation</h3>
+                        <div>
+                            <span class="skill-tag">Digital Transformation</span>
+                            <span class="skill-tag">Enterprise IT Strategy</span>
+                            <span class="skill-tag">Cloud Strategy</span>
+                            <span class="skill-tag">M&A Integration</span>
+                            <span class="skill-tag">C-Suite Partnership</span>
+                        </div>
+                    </div>
+                    <div class="matrix-col">
+                        <h3>Data & Infrastructure</h3>
+                        <div>
+                            <span class="skill-tag">SAP & Oracle ERP</span>
+                            <span class="skill-tag">AWS & Azure Cloud</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                            <span class="skill-tag">Predictive Analytics</span>
+                            <span class="skill-tag">DevOps & ITSM</span>
+                        </div>
+                    </div>
+                    <div class="matrix-col">
+                        <h3>Security & Risk</h3>
+                        <div>
+                            <span class="skill-tag">Cybersecurity Strategy</span>
+                            <span class="skill-tag">NIST & ISO 27001</span>
+                            <span class="skill-tag">Governance & Compliance</span>
+                            <span class="skill-tag">Disaster Recovery</span>
+                            <span class="skill-tag">Risk Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News / Intelligence Section -->
+        <section id="news">
+            <div class="container">
+                <h2>Industry Intelligence</h2>
+                <div class="news-intro">
+                    <p>Curated insights and live market intelligence.</p>
+                </div>
+
+                <!-- Part 1: Curated Links -->
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Curated Links</h3>
+                
+                <div class="news-feed" style="height: auto; margin-bottom: 4rem;">
+                    <div class="news-content">
+                        <!-- 
+                           This UL creates a 2-column list using the existing grid classes.
+                           It ensures all links are visible without scrolling the main page too much.
+                        -->
+                        <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; list-style: none; padding: 0; margin: 0;">
+                            
+                            <li class="news-item">
+                                <a href="https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/" target="_blank">The State of Generative AI in the Enterprise</a>
+                                <div class="news-meta">Menlo Ventures</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.eecs.mit.edu/research/artificial-intelligence-decision-making/" target="_blank">Artificial Intelligence + Decision-making</a>
+                                <div class="news-meta">MIT EECS</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.accenture.com/us-en/insights/data-ai/front-runners-guide-scaling-ai" target="_blank">The front-runners' guide to scaling AI</a>
+                                <div class="news-meta">Accenture</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://retalon.com/blog/machine-learning-in-supply-chain" target="_blank">Machine Learning in Supply Chain in 2025 (Benefits and Examples)</a>
+                                <div class="news-meta">Retalon</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.ey.com/en_gl/insights/financial-services/four-regulatory-shifts-financial-firms-must-watch-in-2026" target="_blank">Regulatory Compliance in 2026</a>
+                                <div class="news-meta">EY</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.gartner.com/en/newsroom/press-releases/2025-11-13-gartner-says-internal-auditors-to-focus-on-cybersecurity-data-governence-and-regulatory-compliance-in-2026-2" target="_blank">Internal Audit in 2026</a>
+                                <div class="news-meta">Gartner</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.nccoe.nist.gov/projects/implementing-zero-trust-architecture" target="_blank">Implementing a Zero Trust Architecture</a>
+                                <div class="news-meta">NIST</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://cloudpso.com/cloud-security-is-failing-in-2025-due-to-misconfigurations/" target="_blank">Cloud Security is Failing in 2025 Due to Misconfigurations</a>
+                                <div class="news-meta">Cloudpso</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.techradar.com/pro/security/new-research-reveals-ai-is-fueling-an-unprecedented-surge-in-cloud-security-risks" target="_blank">New research reveals AI is fueling an 'unprecedented surge in cloud security risks'</a>
+                                <div class="news-meta">Techradar</div>
+                            </li>
+
+                            <li class="news-item">
+                                <a href="https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf" target="_blank">Cybersecurity Incident & Vulnerability Response Playbooks</a>
+                                <div class="news-meta">CISA</div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Part 2: Dynamic "Live" Feeds -->
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Live Market Intelligence</h3>
+                <div class="dynamic-feeds-container">
+                    
+                    <!-- AI Feed -->
+                    <div class="news-feed">
+                        <div class="news-header">
+                            <h3>Artificial Intelligence</h3>
+                            <div class="live-indicator" title="Live Feed"></div>
+                        </div>
+                        <div id="ai-feed-content" class="news-content">
+                            <div style="text-align:center; padding: 2rem; color: var(--text-secondary);">Loading latest headlines...</div>
+                        </div>
+                    </div>
+
+                    <!-- Cyber Feed -->
+                    <div class="news-feed">
+                        <div class="news-header">
+                            <h3>Cybersecurity</h3>
+                            <div class="live-indicator" title="Live Feed"></div>
+                        </div>
+                        <div id="cyber-feed-content" class="news-content">
+                            <div style="text-align:center; padding: 2rem; color: var(--text-secondary);">Loading latest headlines...</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Continuous Learning / Education -->
+        <section id="learning">
+            <div class="container">
+                <h2>Education & Credentials</h2>
+                
+                <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <!-- Standard Education -->
+                    <div>
+                        <h3 style="margin-bottom:1rem; font-size:1.1rem; color:var(--text-primary);">Academic Background</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="font-weight:700; color:var(--text-primary);">Ph.D. in Information Science</div>
+                            <div style="color:var(--text-secondary); font-size:0.9rem;">Claremont Graduate University (ABD)</div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <div style="font-weight:700; color:var(--text-primary);">M.S. Computer Science</div>
+                            <div style="color:var(--text-secondary); font-size:0.9rem;">California State University, Fullerton</div>
+                        </div>
+                        <div>
+                            <div style="font-weight:700; color:var(--text-primary);">B.S. Computer Science</div>
+                            <div style="color:var(--text-secondary); font-size:0.9rem;">California State University, Fullerton</div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications & Learning -->
+                    <div>
+                        <h3 style="margin-bottom:1rem; font-size:1.1rem; color:var(--text-primary);">Certifications</h3>
+                        <div style="margin-bottom: 0.5rem;">
+                            <strong style="color:var(--text-primary);">CISM</strong> <span style="color:var(--text-secondary);">- Certified Information Security Manager</span>
+                        </div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <strong style="color:var(--text-primary);">Six Sigma Yellow Belt</strong>
+                        </div>
+                        <div>
+                            <strong style="color:var(--text-primary);">ITIL Foundation</strong>
+                        </div>
+
+                        <!-- The "Secret" / Continuous Learning Section -->
+                        <div class="learning-card">
+                            <div>
+                                <div style="font-weight:700; color:var(--text-primary);">Certificate in Data Science & Applied AI</div>
+                                <div style="font-size:0.9rem; color:var(--text-secondary);">Professional Education</div>
+                            </div>
+                            <span class="learning-status">In Progress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Contact -->
+        <section id="contact" style="border-bottom: none;">
+            <div class="container">
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <h2 style="margin-bottom: 1.5rem;">Let's Connect</h2>
+                    <p style="margin-bottom: 2rem;">
+                        Open to consulting opportunities and executive leadership roles in IT, Data, and Cybersecurity.
+                    </p>
+                    <a href="https://www.linkedin.com/in/seannikbosh/" target="_blank" class="btn">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/seannikbosh/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
+            <p class="footer-note">&copy; 2024 Sean Nikbosh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Dynamic News Feeds -->
+    <script>
+        // Configuration for RSS to JSON API
+        // We use rss2json to convert RSS feeds to JSON so we can read them in the browser
+        const aiFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://artificialintelligence-news.com/feed/';
+        const cyberFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://thehackernews.com/feeds/posts/default';
+
+        function fetchNews(url, elementId) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById(elementId);
+                    container.innerHTML = ''; // Clear loading text
+
+                    if (data.status === 'ok') {
+                        // Limit to top 5 headlines
+                        const items = data.items.slice(0, 5);
+                        
+                        items.forEach(item => {
+                            // Format date nicely
+                            const date = new Date(item.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+                            const newsItem = document.createElement('div');
+                            newsItem.className = 'news-item';
+                            newsItem.innerHTML = `
+                                <a href="${item.link}" target="_blank">${item.title}</a>
+                                <div class="news-meta">
+                                    <span>${data.feed.title}</span>
+                                    <span>${date}</span>
+                                </div>
+                            `;
+                            container.appendChild(newsItem);
+                        });
+                    } else {
+                        container.innerHTML = '<div style="text-align:center; padding:1rem; color:var(--text-secondary);">Unable to load feed at this time.</div>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching news:', error);
+                    const container = document.getElementById(elementId);
+                    container.innerHTML = '<div style="text-align:center; padding:1rem; color:var(--text-secondary);">Connection error. Please refresh.</div>';
+                });
+        }
+
+        // Initialize feeds on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchNews(aiFeedUrl, 'ai-feed-content');
+            fetchNews(cyberFeedUrl, 'cyber-feed-content');
+        });
+    </script>
+</body>
+</html>
